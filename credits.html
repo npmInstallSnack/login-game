@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Credits - The Login Game</title>
+    <link rel="stylesheet" href="/style.css" />
+    <style>
+      body {
+        background-color: #000000;
+        color: #ffffff;
+        overflow: hidden;
+        margin: 0;
+        padding: 0;
+        font-family: "Arial", sans-serif;
+      }
+
+      a {
+        color: #ffd900;
+        text-decoration: none;
+      }
+
+      .credits-container {
+        position: relative;
+        height: 100vh;
+        overflow: hidden;
+      }
+
+      .credits-wrapper {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        -webkit-mask-image: linear-gradient(
+          transparent 0%,
+          black 10%,
+          black 90%,
+          transparent 100%
+        );
+        mask-image: linear-gradient(
+          transparent 0%,
+          black 10%,
+          black 90%,
+          transparent 100%
+        );
+      }
+
+      .credits-scroll {
+        position: absolute;
+        top: 100vh;
+        width: 100%;
+        text-align: center;
+        animation: scroll-up 12s linear forwards;
+        line-height: 1.8;
+        padding-bottom: 200vh;
+      }
+
+      @keyframes scroll-up {
+        from {
+          transform: translateY(0);
+        }
+        to {
+          transform: translateY(-200vh);
+        }
+      }
+
+      .credits-title {
+        font-size: 3rem;
+        font-weight: bold;
+        margin-bottom: 2rem;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+      }
+
+      .credits-section {
+        margin: 3rem 0;
+        opacity: 1;
+      }
+
+      .section-title {
+        font-size: 1.8rem;
+        font-weight: bold;
+        color: #ffffff;
+        margin-bottom: 1rem;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        text-shadow: 0 0 10px #ffffff;
+      }
+
+      .developer-name {
+        font-size: 1.4rem;
+        margin: 0.5rem 0;
+        color: #ffffff;
+      }
+
+      .role {
+        font-size: 1rem;
+        color: #cccccc;
+        font-style: italic;
+        margin-bottom: 1rem;
+      }
+
+      .user-account {
+        background: rgba(255, 255, 255, 0.1);
+        border: 2px solid #ffd700;
+        border-radius: 15px;
+        padding: 2rem;
+        margin: 2rem auto;
+        max-width: 500px;
+        backdrop-filter: blur(5px);
+      }
+
+      .user-account h3 {
+        color: #ffd700;
+        font-size: 1.6rem;
+        margin-bottom: 1rem;
+      }
+
+      .account-detail {
+        font-size: 1.2rem;
+        margin: 0.8rem 0;
+        padding: 0.5rem 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+      }
+
+      .account-label {
+        color: #ffd700;
+        font-weight: bold;
+      }
+
+      .thank-you {
+        font-size: 2rem;
+        color: #ffd700;
+        margin-top: 3rem;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+      }
+
+      .restart-button {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background: #bbbbbb;
+        color: #1c1c1c;
+        border: none;
+        padding: 12px 24px;
+        border-radius: 25px;
+        font-size: 1rem;
+        font-weight: bold;
+        cursor: pointer;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        z-index: 1000;
+      }
+
+      .restart-button:hover {
+        background: #cbcbcb;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="credits-container">
+      <div class="credits-wrapper">
+        <div class="credits-scroll">
+          <div class="credits-title">THE LOGIN GAME</div>
+
+          <div class="credits-section">
+            <div class="section-title">Game Design & Development</div>
+            <div class="developer-name">Snack Overflow <a href="https://github.com/npmInstallSnack">@npmInstallSnack</a></div>
+            <div class="role">Lead Game Designer</div>
+
+
+          <div class="credits-section">
+            <div class="user-account">
+              <h3>GAME COMPLETE!</h3>
+              <div
+                style="font-size: 1.1rem; margin-bottom: 1.5rem; color: #ffd700"
+              >
+                You've conquered The Login Game by creating the world's most
+                unnecessarily complex account!
+              </div>
+
+              <div class="account-detail">
+                <span class="account-label">Email:</span>
+                <span id="user-email">No email found</span>
+              </div>
+              <div class="account-detail">
+                <span class="account-label">Username:</span>
+                <span id="user-username">No username found</span>
+              </div>
+              <div class="account-detail">
+                <span class="account-label">Password:</span>
+                <span
+                  id="user-password"
+                  style="cursor: pointer"
+                  title="Click to reveal"
+                  >••••••••</span
+                >
+              </div>
+              <div class="account-detail">
+                <span class="account-label">Security Questions:</span>
+                <span id="security-status">Not set</span>
+                <div
+                  id="security-details"
+                  style="font-size: 0.9rem; color: #aaa; margin-top: 5px"
+                ></div>
+              </div>
+              <div class="account-detail">
+                <span class="account-label">Account Status:</span>
+                <span style="color: #00ff00">🏆 LEGENDARY</span>
+                <div style="font-size: 0.9rem; color: #aaa; margin-top: 5px">
+                  (You actually finished this ridiculous game!)
+                </div>
+              </div>
+            </div>
+          <div class="credits-section">
+            <div class="thank-you">Thank you for playing!</div>
+            <div style="font-size: 1.2rem; margin-top: 2rem; color: #cccccc">
+              You've successfully navigated the challenges of creating a secure
+              account.
+              <br />
+              Remember to use strong, unique passwords in real life!
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <a href="../index.html" class="restart-button">Play Again</a>
+
+    <script>
+      // Load user data from localStorage
+      window.onload = function () {
+        // Get stored user data
+        const email =
+          localStorage.getItem("loginGameEmail") || "No email found";
+        const username =
+          localStorage.getItem("loginGameUsername") || "No username found";
+        const password = localStorage.getItem("loginGamePassword");
+        const securityAnswers = localStorage.getItem("securityAnswers");
+
+        // Display user data
+        document.getElementById("user-email").textContent = email;
+        document.getElementById("user-username").textContent = username;
+
+        if (password) {
+          document.getElementById("user-password").textContent = password;
+        }
+
+        if (securityAnswers) {
+          try {
+            const answers = JSON.parse(securityAnswers);
+            const answerCount = Object.keys(answers).length;
+            document.getElementById(
+              "security-status"
+            ).textContent = `Set (${answerCount} questions)`;
+          } catch (e) {
+            document.getElementById("security-status").textContent = "Set";
+          }
+        }
+
+        // Add some fun stats
+        const completionTime = localStorage.getItem("gameStartTime");
+        if (completionTime) {
+          const startTime = parseInt(completionTime);
+          const endTime = Date.now();
+          const timeTaken = Math.round((endTime - startTime) / 1000 / 60); // minutes
+
+          const statsDiv = document.createElement("div");
+          statsDiv.className = "account-detail";
+          statsDiv.innerHTML = `<span class="account-label">Completion Time:</span> <span>${timeTaken} minutes</span>`;
+          document.querySelector(".user-account").appendChild(statsDiv);
+        }
+      };
+
+      // Show security questions and answers
+      function displaySecurityQuestions() {
+        const securityAnswers = localStorage.getItem("securityAnswers");
+        if (securityAnswers) {
+          try {
+            const answers = JSON.parse(securityAnswers);
+            const questions = {
+              past: "What did you dream about two Tuesdays ago?",
+              theoretical:
+                "If your pet could speak, what would be their catchphrase?",
+              metaphysical: "Where do missing socks really go?",
+              future: "What will be your favorite color in 2037?",
+              alternative: "In a parallel universe, what is your profession?",
+              quantum: "How many times have you blinked today?",
+              existential: "Why?",
+              recursive: "What would be your answer to this question?",
+              paradox: "What is the question to this answer?",
+            };
+
+            const detailsDiv = document.getElementById("security-details");
+            let html = "<br>Your Bizarre Security Questions:<br>";
+            let i = 1;
+            for (const [key, value] of Object.entries(answers)) {
+              const questionKey = key.replace(/[0-9]/g, "");
+              html += `<br>${i}. "${questions[questionKey]}"<br>`;
+              html += `Your answer: "${value}"<br>`;
+              i++;
+            }
+            detailsDiv.innerHTML = html;
+          } catch (e) {
+            document.getElementById("security-details").textContent =
+              "Questions set but unavailable in this timeline";
+          }
+        }
+      }
+
+      // Display security questions on load
+      displaySecurityQuestions();
+    </script>
+  </body>
+</html>

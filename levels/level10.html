@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Generiprint</title>
+    <link rel="stylesheet" href="../style.css" />
+    <script defer src="script.js"></script>
+    <style>
+      .box {
+        background: white;
+        border: 1px solid #ccc;
+        padding: 20px;
+        box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.1);
+        width: 100%;
+      }
+      .hidden {
+        display: none !important;
+      }
+      button {
+        margin: 10px;
+        padding: 10px 15px;
+        font-size: 1rem;
+        cursor: pointer;
+      }
+      input {
+        padding: 5px;
+        font-size: 1rem;
+        width: 80%;
+      }
+      .main-flex {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        gap: 32px;
+        margin-bottom: 24px;
+      }
+      .ad-img {
+        width: 300px;
+        height: auto;
+        border-radius: 10px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        margin-top: 0;
+      }
+      .form-group {
+        margin-bottom: 18px;
+      }
+      .form-error {
+        color: red;
+        font-size: 0.95em;
+        margin-left: 8px;
+      }
+      #print-btn {
+        background: #2a7ae2;
+        color: #fff;
+        border: none;
+        border-radius: 6px;
+        font-weight: bold;
+        transition: background 0.2s;
+      }
+      #print-btn:hover {
+        background: #1a5bb8;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main-flex">
+      <img
+        src="../assets/generipaper.png"
+        alt="generipaper coupon: earn 100 free sheets of paper plus free shipping with code FREE100"
+        class="ad-img"
+      />
+      <div class="box">
+        <h1>Welcome to Generiprint</h1>
+        <h2>Printing Overview</h2>
+        <p>Your account must be printed for legal recordkeeping.</p>
+        <form
+          id="print-form"
+          onsubmit="event.preventDefault(); handlePrintForm();"
+        >
+          <div class="form-group">
+            <label for="paper-size"><strong>Paper Size</strong></label>
+            <select id="paper-size">
+              <option value="letter">Letter</option>
+              <option value="envelope">Envelope</option>
+              <option value="card">Business card</option>
+              <option value="a4">A4</option>
+              <option value="legal">Legal</option>
+            </select>
+            <span id="paper-size-error" class="form-error hidden"
+              >Must select Legal size.</span
+            >
+          </div>
+          <div class="form-group">
+            <label for="orientation"><strong>Orientation</strong></label>
+            <select id="orientation">
+              <option value="landscape">Landscape</option>
+              <option value="portrait">Portrait</option>
+              <option value="reverse-landscape">Reverse Landscape</option>
+              <option value="reverse-portrait">Reverse Portrait</option>
+              <option value="diagonal">Diagonal</option>
+            </select>
+            <span id="orientation-error" class="form-error hidden"
+              >Must select Portrait orientation.</span
+            >
+          </div>
+          <div class="form-group">
+            <label for="quality"><strong>Print Quality</strong></label>
+            <select id="quality">
+              <option value="draft">Draft</option>
+              <option value="normal">Normal</option>
+              <option value="high">High</option>
+              <option value="photo">Photo</option>
+            </select>
+            <span id="quality-error" class="form-error hidden"
+              >Must select Normal quality.</span
+            >
+          </div>
+          <div class="form-group">
+            <label for="copies"><strong>Number of Copies</strong></label>
+            <input id="copies" type="number" min="1" max="100" value="1" />
+            <span id="copies-error" class="form-error hidden"
+              >Must print at least 50 copies.</span
+            >
+          </div>
+          <div class="form-group">
+            <label for="range"><strong>Page Range</strong></label>
+            <input id="range" autocomplete="off" placeholder="e.g. 1-5" />
+            <span id="range-error" class="form-error hidden"
+              >Must enter 6-1275.</span
+            >
+          </div>
+          <span id="paper-error" class="form-error hidden"
+            >The printer is out of paper.</span
+          >
+          <button type="submit" id="print-btn">Start Printing</button>
+        </form>
+
+        <div id="payment-step" class="hidden box">
+          <h4>Out of Paper</h4>
+          <p>
+            The printer is all out of paper.<br />
+            Please order 100 sheets from Generipaper for $99.95 to continue.
+          </p>
+          <div class="form-group">
+            <label for="cc"><strong>Credit/Debit Card Number</strong></label>
+            <input id="cc" placeholder="Enter credit card number" />
+            <span id="cc-error" class="form-error hidden"
+              >Transaction declined.</span
+            >
+          </div>
+          <div class="form-group">
+            <label for="coupon"
+              ><strong>Coupon Code</strong>
+              <span style="color: #888; font-size: 0.9em"
+                >(optional)</span
+              ></label
+            >
+            <input id="coupon" placeholder="Enter coupon code" />
+            <span id="coupon-error" class="form-error hidden"
+              >Invalid coupon code.</span
+            >
+          </div>
+          <button id="order-btn">Place Order</button>
+        </div>
+
+        <div id="step-printing" class="hidden">
+          <p>Paper received. Printing in progress...</p>
+          <progress id="progress-bar" max="100" value="0"></progress>
+          <p id="print-status">Initializing printer...</p>
+        </div>
+        <div id="step-done" class="hidden">
+          <h3>✅ Printing Complete</h3>
+          <p>
+            Your account is now safely stored in Genericorp's state-of-the-art
+            records bunker (next to the holiday decorations). You now have a
+            fully set up account with Genericorp, so congratulations!
+          </p>
+          <a onclick="dashboard()"
+            ><button>Continue to User Dashboard</button></a
+          >
+        </div>
+      </div>
+    </div>
+    <div id="dashboard" class="hidden">
+      <h1>404</h1>
+      <p>Page not found</p>
+    </div>
+    <script src="level10.js"></script>
+  </body>
+</html>

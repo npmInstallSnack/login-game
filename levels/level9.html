@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../style.css" />
+    <title>Security Question</title>
+  </head>
+  <body>
+    <div id="game-container">
+      <h1>Security Questions Setup</h1>
+      <p>Please choose and answer 3 security questions:</p>
+      <form id="security-form">
+        <div class="question-group">
+          <select id="question1" required>
+            <option value="">Select your first security question...</option>
+            <option value="past">
+              What did you dream about two Tuesdays ago?
+            </option>
+            <option value="theoretical">
+              If your pet could speak, what would be their catchphrase?
+            </option>
+            <option value="metaphysical">
+              Where do missing socks really go?
+            </option>
+          </select>
+          <input
+            type="text"
+            id="answer1"
+            required
+            placeholder="Your answer..."
+            autocomplete="off"
+          />
+        </div>
+
+        <div class="question-group">
+          <select id="question2" required>
+            <option value="">Select your second security question...</option>
+            <option value="future">
+              What will be your favorite color in 2037?
+            </option>
+            <option value="alternative">
+              In a parallel universe, what is your profession?
+            </option>
+            <option value="quantum">
+              How many times have you blinked today? (Must be exact)
+            </option>
+          </select>
+          <input
+            type="text"
+            id="answer2"
+            required
+            placeholder="Your answer..."
+            autocomplete="off"
+          />
+        </div>
+
+        <div class="question-group">
+          <select id="question3" required>
+            <option value="">Select your third security question...</option>
+            <option value="existential">Why?</option>
+            <option value="recursive">
+              What would be your answer to this question?
+            </option>
+            <option value="paradox">
+              What is the question to this answer?
+            </option>
+          </select>
+          <input
+            type="text"
+            id="answer3"
+            required
+            placeholder="Your answer..."
+            autocomplete="off"
+          />
+        </div>
+
+        <button type="submit">Set Security Questions</button>
+      </form>
+      <div id="error-msg"></div>
+      <div id="hint"></div>
+    </div>
+    <script src="level9.js"></script>
+  </body>
+</html>

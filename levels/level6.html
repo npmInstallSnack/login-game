@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Age Requirement</title>
+    <link rel="stylesheet" href="../style.css" />
+  </head>
+  <body>
+    <div id="game-container">
+      <h1>Age Requirement</h1>
+      <form id="age-form">
+        <label for="age">Enter your date of birth:</label>
+        <input
+          type="date"
+          id="birthdate"
+          name="birthdate"
+          autocomplete="bday"
+          required
+        />
+        <button type="submit">Next</button>
+      </form>
+      <div id="error-msg"></div>
+    </div>
+    <script src="level6.js"></script>
+  </body>
+</html>

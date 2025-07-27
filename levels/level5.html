@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../style.css" />
+    <title>CAPTCHA</title>
+    <style>
+      body {
+        font-family: sans-serif;
+        background: #f2f2f2;
+        text-align: center;
+        padding: 2em;
+      }
+
+      h2 {
+        margin-bottom: 1em;
+      }
+
+      .captcha-container {
+        position: relative;
+        width: 320px;
+        height: 240px;
+        margin: auto;
+        background-image: url("https://upload.wikimedia.org/wikipedia/commons/b/b2/Dog-1123016_960_720.jpg");
+        background-size: cover;
+        border: 4px solid #aaa;
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(10, 1fr);
+        grid-template-rows: repeat(10, 1fr);
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+
+      .tile {
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        cursor: pointer;
+      }
+
+      .tile.selected {
+        outline: 2px solid #00aaff;
+        background-color: rgba(0, 170, 255, 0.3);
+      }
+
+      button {
+        margin-top: 1em;
+        padding: 0.5em 1em;
+        font-size: 16px;
+        cursor: pointer;
+      }
+
+      #result {
+        margin-top: 1em;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Select all images with <em>dogs</em></h2>
+    <div class="captcha-container">
+      <div class="grid" id="captchaGrid">
+        <!-- JS inserts tiles here -->
+      </div>
+    </div>
+
+    <button onclick="checkCaptcha()">Verify</button>
+    <div id="result"></div>
+
+    <script src="level5.js"></script>
+  </body>
+</html>
