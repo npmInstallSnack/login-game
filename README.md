@@ -6,6 +6,8 @@
 ![Repo Size](https://img.shields.io/github/repo-size/npmInstallSnack/login-game?style=flat-square)
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
 
+### [➜ Play the Live Demo](https://npminstallsnack.github.io/login-game/)
+
 # The Login Game
 
 They said signing up would be easy.
@@ -35,7 +37,7 @@ Or do. It doesn't really matter.
 ## 🚀 Try It Now
 
 Play the game in your browser:  
-**[▶️ Start the Login Game](https://yourgameurl.com)**
+**[▶️ Start the Login Game](https://npminstallsnack.github.io/login-game/)**
 
 ## ✨ Share Your Suffering
 
