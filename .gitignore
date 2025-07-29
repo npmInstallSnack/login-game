@@ -1,0 +1,34 @@
+# macOS
+.DS_Store
+
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json
+yarn.lock
+
+# Logs
+logs/
+*.log
+
+# Environment variables
+.env
+.env.*
+
+# Build output
+dist/
+build/
+out/
+
+# VSCode
+.vscode/
+
+# Misc
+*.swp
+*.swo
+.idea/
+*.iml
+*.bak
+*.tmp

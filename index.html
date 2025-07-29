@@ -3,16 +3,252 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Login Game - They Said It Would Be Easy</title>
     <link rel="stylesheet" href="style.css" />
-    <title>Genericorp Login Portal</title>
+    <link rel="stylesheet" href="homepage-styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
   </head>
-  <body>
-    <div id="game-container">
-      <h1 id="level-title">Welcome to the Genericorp Login Portal</h1>
-      <p id="game-description">Let's create your account.</p>
-      <a href="levels/level1.html"><button>Go</button></a> <br>
-      <em>Psst! Note to players: if you're feeling stuck, you can skip the level by editing the number in the URL.</em>
-      </div>
+  <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+  <body class="homepage">
+    <div class="background-animation">
+      <div class="floating-element"></div>
+      <div class="floating-element"></div>
+      <div class="floating-element"></div>
+      <div class="floating-element"></div>
+      <div class="floating-element"></div>
     </div>
+
+    <header class="hero-section">
+      <div class="container">
+        <div class="logo-container">
+          <img src="assets/logo-dark.gif" alt="The Login Game" class="logo" />
+        </div>
+
+        <h1 class="hero-title">
+          They said signing up would be <span class="highlight">easy</span>.
+        </h1>
+
+        <div class="hero-subtitle">
+          <strong>It's not.</strong>
+        </div>
+
+        <p class="hero-description">
+          Experience the most absurd, bureaucratic, and soul-crushing account
+          creation process ever imagined. If you've ever screamed at a broken
+          login portal, this is your therapy.
+        </p>
+
+        <div class="cta-section">
+          <a href="play.html" class="cta-button primary">
+            <span>Start the Nightmare</span>
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M9 18L15 12L9 6"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </a>
+
+          <a href="#about" class="cta-button secondary">Learn More</a>
+        </div>
+
+        <div class="warning-banner">
+          ⚠️ <strong>Warning:</strong> Most people can't finish this. Don't get
+          your hopes up.
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section id="about" class="features-section">
+        <div class="container">
+          <h2 class="section-title">What Awaits You?</h2>
+
+          <div class="features-grid">
+            <div class="feature-card">
+              <div class="feature-icon">📄</div>
+              <h3>Infinite Terms & Conditions</h3>
+              <p>
+                Legal documents that would make lawyers weep. Hope you have all
+                day to read them.
+              </p>
+            </div>
+
+            <div class="feature-card">
+              <h3>CAPTCHA Loops</h3>
+              <div class="feature-icon">🤖</div>
+              <p>
+                Test your humanity AND your patience. Are you sure that's a
+                traffic light?
+              </p>
+            </div>
+
+            <div class="feature-card">
+              <div class="feature-icon">🔐</div>
+              <h3>Password Requirements</h3>
+              <p>
+                Seems simple enough... until you read the fine print. Good luck
+                remembering this one.
+              </p>
+            </div>
+
+            <div class="feature-card">
+              <div class="feature-icon">❓</div>
+              <h3>Security Questions</h3>
+              <p>
+                Questions you couldn't answer if your life depended on it. (And
+                it does.)
+              </p>
+            </div>
+
+            <div class="feature-card">
+              <div class="feature-icon">🎂</div>
+              <h3>Age Restrictions</h3>
+              <p>
+                Only 18-year-olds exactly. Not 17, not 19. Perfectly 18. Hope
+                you planned ahead.
+              </p>
+            </div>
+
+            <div class="feature-card">
+              <div class="feature-icon">💸</div>
+              <h3>And Much More!</h3>
+              <p>
+                We've got surprises that will make you question your life
+                choices. Enjoy!
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="challenge-section">
+        <div class="container">
+          <div class="challenge-content">
+            <h2>Think You Can Handle It?</h2>
+            <p>
+              Join the brave souls who dared to attempt account creation. Most
+              gave up. Some cried. A few actually made it.
+            </p>
+
+            <div class="stats">
+              <div class="stat">
+                <span class="stat-number">50%</span>
+                <span class="stat-label">Quit Before Level 5</span>
+              </div>
+              <div class="stat">
+                <span class="stat-number">40%</span>
+                <span class="stat-label">Made It Halfway</span>
+              </div>
+              <div class="stat">
+                <span class="stat-number">10%</span>
+                <span class="stat-label">Actually Finished</span>
+              </div>
+            </div>
+            <em
+              >Based on playtesting data, accuracy not guaranteed (it may be
+              worse)</em
+            >
+            <br />
+            <br />
+            <a href="play.html" class="cta-button primary large">
+              Accept the Challenge
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-left">
+            <img
+              src="assets/logo-dark.gif"
+              alt="The Login Game"
+              class="footer-logo"
+            />
+            <p>
+              A satirical web experience by
+              <a href="https://github.com/npmInstallSnack">npmInstallSnack</a>
+            </p>
+          </div>
+
+          <div class="footer-right">
+            <div class="footer-links">
+              <a href="credits.html">Credits</a>
+              <a
+                href="https://github.com/npmInstallSnack/login-game"
+                target="_blank"
+                >GitHub</a
+              >
+              <a href="LICENSE">License</a>
+            </div>
+
+            <div class="social-share">
+              <p>Survived the game? Brag about it:</p>
+              <a
+                href="https://github.com/npmInstallSnack/login-game/discussions/3"
+                target="_blank"
+                class="social-button"
+                style="background-color: black; color: white"
+              >
+                Talk on GitHub
+              </a>
+              <a
+                href="https://x.com/intent/tweet?text=I%20just%20completed%20The%20Login%20Game!%20Think%20you%20can%20handle%20it?&url=https://npminstallsnack.github.io/login-game/"
+                target="_blank"
+                class="social-button"
+              >
+                Tweet on 𝕏
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p>
+            &copy; 2025 @npmInstallSnack. Licensed under MIT. Made with
+            frustration and VS Code.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // Smooth scrolling for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute("href"));
+          if (target) {
+            target.scrollIntoView({
+              behavior: "smooth",
+              block: "start",
+            });
+          }
+        });
+      });
+
+      // Add some interactive elements
+      const floatingElements = document.querySelectorAll(".floating-element");
+      floatingElements.forEach((element, index) => {
+        element.style.animationDelay = `${index * 0.5}s`;
+      });
+    </script>
   </body>
 </html>
