@@ -2,7 +2,7 @@
 ![The Login Game logo](assets/logo-light.gif#gh-light-mode-only)
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square)](LICENSE)
-![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](https://github.com/npmInstallSnack/login-game/pulls)
 ![Repo Size](https://img.shields.io/github/repo-size/npmInstallSnack/login-game?style=flat-square)
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
 
