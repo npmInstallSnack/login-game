@@ -8,7 +8,7 @@
 
 ### [➜ Play the Live Demo](https://npminstallsnack.github.io/login-game/)
 
-# The Login Game
+# The Login Game Alpha
 
 They said signing up would be easy.
 
