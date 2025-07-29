@@ -4,16 +4,15 @@ const totalTiles = gridSize * gridSize;
 
 // Define which tiles are correct (these are fake "dog" boxes)
 const correctIndexes = [
-  23, 24, 25, 26, 33, 34, 35, 36, 43, 44, 45, 46, 53, 54, 55, 56, 63, 64, 65,
-  66, 73, 74, 75, 76, 83, 84, 85,
-]; // customize as desired
+  24, 25, 33, 34, 35, 36, 43, 44, 45, 46, 54, 55, 56, 63, 64, 65, 66, 73, 74,
+  75, 76, 83, 84,
+];
 
 // Generate grid tiles
 for (let i = 0; i < totalTiles; i++) {
   const tile = document.createElement("div");
   tile.className = "tile";
   tile.dataset.index = i;
-  tile.title = `Box ID: ${i}`;
   tile.addEventListener("click", () => {
     tile.classList.toggle("selected");
   });
@@ -25,9 +24,7 @@ function checkCaptcha() {
     (tile) => parseInt(tile.dataset.index)
   );
 
-  const isCorrect =
-    selected.length === correctIndexes.length &&
-    selected.every((index) => correctIndexes.includes(index));
+  const isCorrect = correctIndexes.every((index) => selected.includes(index));
 
   const result = document.getElementById("result");
   if (isCorrect) {
