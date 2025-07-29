@@ -128,7 +128,7 @@ form.addEventListener("submit", (e) => {
 
     // Redirect after a dramatic pause
     setTimeout(() => {
-      window.location.href = "level10.html";
+      window.location.href = "./level10.html";
     }, 4000);
   }
 });

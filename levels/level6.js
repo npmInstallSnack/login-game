@@ -20,6 +20,6 @@ birthdateInput.addEventListener("change", () => {
     birthdateInput.setCustomValidity("You must be 18 years old. Exactly 18.");
   } else {
     birthdateInput.setCustomValidity(""); // Clear the error
-    window.location.href = "/levels/level7.html";
+    window.location.href = "./level7.html";
   }
 });

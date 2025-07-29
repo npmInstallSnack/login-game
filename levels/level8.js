@@ -65,7 +65,7 @@ yesButton.addEventListener("click", () => {
       noButton.before(temp);
       isSwapped = true;
     } else {
-      window.location.href = "level9.html"; // Redirect to next level
+      window.location.href = "./level9.html"; // Redirect to next level
     }
   }
 
