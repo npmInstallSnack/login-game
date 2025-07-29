@@ -1,3 +1,5 @@
+let attempts = 0;
+
 function biasedHash(input) {
   // Convert input to string and get a hash-like number
   const str = JSON.stringify(input);
@@ -10,9 +12,13 @@ function biasedHash(input) {
   // Normalize to [0, 1)
   const normalized = Math.abs(hash % 10000) / 10000;
 
-  // Biased threshold: only values < 0.01 return 1 (i.e., ~10% chance)
-  return normalized < 0.1 ? 1 : 0;
+  // First attempt is always taken
+  if (attempts === 0) return 0;
+
+  // 1-in-4 chance (25%) of success
+  return normalized < 0.25 ? 1 : 0;
 }
+
 document.getElementById("username-form").onsubmit = function (e) {
   e.preventDefault();
   const username = document
@@ -20,6 +26,7 @@ document.getElementById("username-form").onsubmit = function (e) {
     .value.trim()
     .toLowerCase();
   const bias = biasedHash(username);
+  attempts++;
   if (bias) {
     // Store username in localStorage
     localStorage.setItem("loginGameUsername", username);
@@ -29,9 +36,7 @@ document.getElementById("username-form").onsubmit = function (e) {
     if (username.length < 5) {
       errorMsg.textContent = "Username must be at least 5 characters.";
     } else {
-      {
-        errorMsg.textContent = "Username is taken. Please choose another.";
-      }
+      errorMsg.textContent = "Username is taken. Please choose another.";
     }
   }
 };
