@@ -43,7 +43,7 @@ Play the game in your browser:
 
 Did you actually finish? Brag about it!
 
-- [Share on X (Twitter)](https://twitter.com/intent/tweet?text=I%20just%20finished%20The%20Login%20Game%20–%20the%20worst%20signup%20you%27ll%20ever%20enjoy!%20https%3A%2F%2Fyourgameurl.com)
+- [Share on X (Twitter)](https://twitter.com/intent/tweet?text=I%20just%20finished%20The%20Login%20Game%20–%20the%20worst%20signup%20you%27ll%20ever%20enjoy!%20https%3A%2F%2Fnpminstallsnack.github.io%2Flogin-game)
 - Or copy your profile summary in-game and send it to a fellow masochist.
 
 ## 👀 Tech Stack
